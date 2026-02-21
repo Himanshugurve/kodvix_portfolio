@@ -145,7 +145,7 @@ export default function KodVixAbout() {
 
           .about-visual {
             width: 100%;
-            height: 140px;
+            height: 200px;
             border-right: none;
             border-bottom: 1px solid rgba(22,78,99,0.3);
             flex-shrink: 0;
@@ -171,22 +171,29 @@ export default function KodVixAbout() {
           }
 
           .about-content {
-            padding: 1.75rem 1.25rem;
+            padding: 1.25rem 1.25rem 1.25rem;
             justify-content: flex-start;
           }
 
           .stats-row {
-            gap: 1rem;
+            gap: 0.75rem;
+            margin-bottom: 0.85rem !important;
           }
 
           /* Tighter approach block on mobile */
           .approach-block {
-            padding: 12px 14px !important;
+            padding: 10px 12px !important;
+            margin-bottom: 0.85rem !important;
+          }
+
+          /* Tighter body text spacing */
+          .about-fade-3 {
+            margin-bottom: 0.85rem !important;
           }
 
           /* Smaller quote card padding */
           .quote-card {
-            padding: 1rem 1.25rem !important;
+            padding: 0.75rem 1rem !important;
           }
 
           /* Hide page number on very small screens */
