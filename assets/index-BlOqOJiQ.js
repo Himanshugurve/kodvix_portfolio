@@ -420,7 +420,7 @@ Error generating stack: `+l.message+`
           .svc-root {
             /* Reduced top padding to make heading visible */
             padding: 2rem 1rem 2rem;
-            margin-top: 10rem;
+            margin-top: 15rem;
             min-height: 100vh;
           }
 
