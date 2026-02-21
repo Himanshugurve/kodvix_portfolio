@@ -172,7 +172,7 @@ export default function KodVixPortfolio() {
         @media (max-width: 599px)  { 
           .pf-root { 
             padding: 4rem 1rem 2rem; 
-            margin-top: 10rem; 
+            margin-top: 15rem; 
           } 
         }
 

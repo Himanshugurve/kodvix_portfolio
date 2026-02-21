@@ -177,7 +177,7 @@ export default function KodVixWhyUs() {
         @media (max-width: 599px) {
           .why-root {
             /* Extra top padding = clears any fixed nav (e.g. 64px) + breathing room */
-            padding: 17rem 1rem 2rem;
+            padding: 21rem 1rem 2rem;
           }
           .why-header { margin-bottom: 1.25rem; }
           .why-hrow   { flex-direction: column; align-items: flex-start; gap: 0.75rem; }
