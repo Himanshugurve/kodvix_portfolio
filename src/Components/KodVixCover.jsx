@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import kodvixLogo from "../assets/kodvix-logo (1).png";
+import kodvixLogo from "../assets/logo.jpeg";
 
 export default function KodVixCover() {
   const canvasRef = useRef(null);
@@ -274,7 +274,7 @@ export default function KodVixCover() {
             width:"clamp(52px, 6.5vw, 76px)", height:"clamp(52px, 6.5vw, 76px)",
             display:"flex", alignItems:"center", justifyContent:"center",
             border:"1.5px solid rgba(6,182,212,0.5)", borderRadius:"16px",
-            backgroundColor:"rgba(172, 182, 205, 0.75)",
+            backgroundColor:"rgba(0, 30, 101, 0.75)",
             boxShadow:"0 0 28px rgba(6,182,212,0.22), inset 0 0 16px rgba(6,182,212,0.04)",
             backdropFilter:"blur(12px)",
           }}>
