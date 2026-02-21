@@ -120,7 +120,7 @@ export default function KodVixGlobal() {
       {[{top:"1.25rem",left:"1.25rem",borderTop:"1.5px solid rgba(6,182,212,0.35)",borderLeft:"1.5px solid rgba(6,182,212,0.35)"},{top:"1.25rem",right:"1.25rem",borderTop:"1.5px solid rgba(6,182,212,0.35)",borderRight:"1.5px solid rgba(6,182,212,0.35)"},{bottom:"1.25rem",left:"1.25rem",borderBottom:"1.5px solid rgba(6,182,212,0.35)",borderLeft:"1.5px solid rgba(6,182,212,0.35)"},{bottom:"1.25rem",right:"1.25rem",borderBottom:"1.5px solid rgba(6,182,212,0.35)",borderRight:"1.5px solid rgba(6,182,212,0.35)"}].map((s,i)=><div key={i} style={{ position:"absolute",width:"18px",height:"18px",zIndex:5,...s }} />)}
 
       {/* Header */}
-      <div style={{ position:"relative",zIndex:10,marginBottom:"clamp(1.5rem,3vw,2.5rem)" }}>
+      <div style={{ position:"relative",zIndex:10,marginBottom:"clamp(1.5rem,3vw,2.5rem)", marginTop: "5rem" }}>
         <div className="gl-label" style={{ display:"flex",alignItems:"center",gap:"12px",marginBottom:"clamp(0.5rem,1vw,0.8rem)" }}>
           <div style={{ width:"2rem",height:"2px",borderRadius:"2px",backgroundColor:"#22d3ee",boxShadow:"0 0 8px rgba(34,211,238,0.8)",animation:"lineExpand 0.7s ease 0.05s both" }} />
           <span style={{ fontFamily:"'Martian Mono',monospace",fontSize:"0.58rem",letterSpacing:"0.26em",color:"#22d3ee",textTransform:"uppercase",fontWeight:400 }}>Global Presence</span>
