@@ -544,7 +544,7 @@ Error generating stack: `+l.message+`
         /* ── MOBILE (≤640px) ── */
         @media (max-width: 640px) {
           .ts-root {
-            padding: 4.5rem 1rem 2rem;
+            padding: 10.5rem 1rem 2rem;
           }
           .ts-header { margin-bottom: 1.25rem; }
           /* Hide spec bars — saves horizontal space on mobile */
@@ -656,7 +656,7 @@ Error generating stack: `+l.message+`
         @media (max-width: 599px) {
           .why-root {
             /* Extra top padding = clears any fixed nav (e.g. 64px) + breathing room */
-            padding: 17rem 1rem 2rem;
+            padding: 21rem 1rem 2rem;
           }
           .why-header { margin-bottom: 1.25rem; }
           .why-hrow   { flex-direction: column; align-items: flex-start; gap: 0.75rem; }
@@ -864,7 +864,7 @@ Manorama Ganj, Indore, MP 452001`,accentColor:"#38bdf8"})})]}),r.jsxs("div",{cla
         @media (max-width: 599px)  { 
           .pf-root { 
             padding: 4rem 1rem 2rem; 
-            margin-top: 10rem; 
+            margin-top: 15rem; 
           } 
         }
 
