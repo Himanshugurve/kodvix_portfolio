@@ -413,6 +413,7 @@ Error generating stack: `+a.message+`
           .svc-root {
             /* Reduced top padding to make heading visible */
             padding: 2rem 1rem 2rem;
+            margin-top: 10rem;
             min-height: 100vh;
           }
 
@@ -423,6 +424,7 @@ Error generating stack: `+a.message+`
             flex-direction: column;
             align-items: flex-start;
             gap: 0.85rem;
+            margin-top: 10rem;
           }
 
           /* Badge aligns left on mobile */
@@ -537,10 +539,16 @@ Manorama Ganj, Indore, MP 452001`,accentColor:"#38bdf8"})})]}),r.jsxs("div",{cla
           display: flex; flex-direction: column;
           box-sizing: border-box; overflow: hidden;
           /* Generous padding so header is never clipped by prev section */
-          padding: 6rem 4rem 3rem;
+          padding: 6rem 4rem 9rem;
+          margin-top: 10rem;
         }
-        @media (max-width: 1023px) { .pf-root { padding: 5rem 2rem 2.5rem; } }
-        @media (max-width: 599px)  { .pf-root { padding: 4rem 1rem 2rem; } }
+        @media (max-width: 1023px) { .pf-root { padding: 5rem 2rem 2.5rem; margin-top: 10rem;} }
+        @media (max-width: 599px)  { 
+          .pf-root { 
+            padding: 4rem 1rem 2rem; 
+            margin-top: 10rem; 
+          } 
+        }
 
         /* ── Header spacing ── */
         .pf-header { position:relative; z-index:10; margin-bottom: 2.5rem; }
