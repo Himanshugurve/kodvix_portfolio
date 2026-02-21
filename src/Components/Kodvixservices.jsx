@@ -231,6 +231,7 @@ export default function KodVixServices() {
           .svc-root {
             /* Reduced top padding to make heading visible */
             padding: 2rem 1rem 2rem;
+            margin-top: 10rem;
             min-height: 100vh;
           }
 
@@ -241,6 +242,7 @@ export default function KodVixServices() {
             flex-direction: column;
             align-items: flex-start;
             gap: 0.85rem;
+            margin-top: 10rem;
           }
 
           /* Badge aligns left on mobile */
