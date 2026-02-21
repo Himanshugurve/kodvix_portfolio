@@ -6,11 +6,13 @@ import KodVixWhyUs from './Components/KodVixWhyUs'
 import KodVixPartner from './Components/KodVixPartner'
 import KodVixGlobal from './Components/KodVixGlobal'
 import KodVixContact from './Components/KodVixContact'
+import KodVixPortfolio from './Components/Kodvixportfolio .jsx'
 
 const sections = [
   { id: 'cover',    label: 'Cover',    Component: KodVixCover },
   { id: 'about',    label: 'About',    Component: KodVixAbout },
   { id: 'services', label: 'Services', Component: KodVixServices },
+  {id: 'portfolio', label: 'Portfolio', Component: KodVixPortfolio},
   { id: 'tech',     label: 'Tech',     Component: KodVixTechStack },
   { id: 'why',      label: 'Why Us',   Component: KodVixWhyUs },
   { id: 'partner',  label: 'Partner',  Component: KodVixPartner },
