@@ -166,13 +166,11 @@ export default function KodVixPortfolio() {
           box-sizing: border-box; overflow: hidden;
           /* Generous padding so header is never clipped by prev section */
           padding: 6rem 4rem 9rem;
-          margin-top: 10rem;
         }
-        @media (max-width: 1023px) { .pf-root { padding: 5rem 2rem 2.5rem; margin-top: 10rem;} }
+        @media (max-width: 1023px) { .pf-root { padding: 5rem 2rem 2.5rem; } }
         @media (max-width: 599px)  { 
           .pf-root { 
-            padding: 4rem 1rem 2rem; 
-            margin-top: 15rem; 
+            padding: 21rem 1rem 2rem; 
           } 
         }
 
@@ -252,7 +250,7 @@ export default function KodVixPortfolio() {
 
       {/* ── HEADER ── */}
       <div className="pf-header">
-        <div className="pf-label" style={{ display:"flex",alignItems:"center",gap:"10px",marginBottom:"0.9rem",marginTop:"10rem" }}>
+        <div className="pf-label" style={{ display:"flex",alignItems:"center",gap:"10px",marginBottom:"0.9rem" }}>
           <div style={{ width:"2rem",height:"2px",borderRadius:"2px",backgroundColor:"#22d3ee",boxShadow:"0 0 8px rgba(34,211,238,0.8)",animation:"lineExpand 0.7s ease 0.05s both" }} />
           <span style={{ fontFamily:"'Martian Mono',monospace",fontSize:"0.56rem",letterSpacing:"0.24em",color:"#22d3ee",textTransform:"uppercase",fontWeight:400 }}>Projects</span>
         </div>

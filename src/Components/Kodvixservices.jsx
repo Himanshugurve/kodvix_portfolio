@@ -374,8 +374,8 @@ export default function KodVixServices() {
 
         @media (max-width: 599px) {
           .svc-root {
-            padding: 2.5rem 0 2rem;
-            min-height: fit-content;
+            padding: 0.5rem 0 1rem;
+            min-height: 100vh;
           }
           .svc-header  { margin-bottom: 1.25rem; padding: 0 1rem; }
           .svc-hrow {
