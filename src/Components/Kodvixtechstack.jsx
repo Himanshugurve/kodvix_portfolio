@@ -219,7 +219,7 @@ export default function KodVixTechStack() {
         /* ── MOBILE (≤640px) ── */
         @media (max-width: 640px) {
           .ts-root {
-            padding: 10.5rem 1rem 2rem;
+            padding: 6.5rem 1rem 2rem;
           }
           .ts-header { margin-bottom: 1.25rem; }
           /* Hide spec bars — saves horizontal space on mobile */
