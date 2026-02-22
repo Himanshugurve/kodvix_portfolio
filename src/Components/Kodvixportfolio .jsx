@@ -165,19 +165,23 @@ export default function KodVixPortfolio() {
           display: flex; flex-direction: column;
           box-sizing: border-box; overflow: hidden;
           /* Generous padding so header is never clipped by prev section */
-          padding: 24rem 4rem 9rem;
+          padding: 18rem 4rem 9rem;
         }
-        @media (max-width: 1023px) { .pf-root { padding: 17rem 2rem 2.5rem; } }
+        @media (max-width: 1023px) { 
+          .pf-root { 
+            padding: 15rem 2rem 2.5rem; 
+          } 
+        }
         @media (max-width: 599px)  { 
           .pf-root { 
-            padding: 21rem 1rem 2rem; 
+            padding: 12rem 1rem 2rem; 
           } 
         }
 
         /* ── Header spacing ── */
-        .pf-header { position:relative; z-index:10; margin-bottom: 2.5rem; }
-        @media (max-width:1023px) { .pf-header { margin-bottom: 2rem; } }
-        @media (max-width:599px)  { .pf-header { margin-bottom: 1.5rem; } }
+        .pf-header { position:relative; z-index:100; margin-bottom: 2.5rem; margin-top: 12rem; }
+        @media (max-width:1023px) { .pf-header { margin-bottom: 2rem; margin-top: 10rem; } }
+        @media (max-width:599px)  { .pf-header { margin-bottom: 1.5rem; margin-top: 8rem; } }
 
         /* ── Heading row ── */
         .pf-heading-row { display:flex; align-items:flex-end; justify-content:space-between; flex-wrap:wrap; gap:1.25rem; }
@@ -249,7 +253,7 @@ export default function KodVixPortfolio() {
       ].map((s,i) => <div key={i} style={{ position:"absolute",width:"18px",height:"18px",zIndex:5,...s }} />)}
 
       {/* ── HEADER ── */}
-      <div className="pf-header">
+      <div className="pf-header" style={{ marginTop: "8rem" }}>
         <div className="pf-label" style={{ display:"flex",alignItems:"center",gap:"10px",marginBottom:"0.9rem" }}>
           <div style={{ width:"2rem",height:"2px",borderRadius:"2px",backgroundColor:"#22d3ee",boxShadow:"0 0 8px rgba(34,211,238,0.8)",animation:"lineExpand 0.7s ease 0.05s both" }} />
           <span style={{ fontFamily:"'Martian Mono',monospace",fontSize:"0.56rem",letterSpacing:"0.24em",color:"#22d3ee",textTransform:"uppercase",fontWeight:400 }}>Projects</span>

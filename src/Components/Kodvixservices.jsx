@@ -374,10 +374,10 @@ export default function KodVixServices() {
 
         @media (max-width: 599px) {
           .svc-root {
-            padding: 0.5rem 0 1rem;
+            padding: 1rem 0 1rem;
             min-height: 100vh;
           }
-          .svc-header  { margin-bottom: 1.25rem; padding: 0 1rem; }
+          .svc-header  { margin-bottom: 1rem; padding: 0 1rem; }
           .svc-hrow {
             flex-direction: column;
             align-items: flex-start;
@@ -385,7 +385,7 @@ export default function KodVixServices() {
           }
           .svc-badge { align-self: flex-start; }
           .svc-footer {
-            margin-top: 1.25rem;
+            margin-top: 1rem;
             justify-content: center;
             padding: 0 1rem;
           }
@@ -494,11 +494,7 @@ export default function KodVixServices() {
             <span key={i} style={{ fontFamily: "'Barlow Condensed',sans-serif", fontWeight: 500, fontSize: "0.6rem", letterSpacing: "0.18em", color: "rgba(34,211,238,0.4)", textTransform: "uppercase", padding: "4px 12px", border: "1px solid rgba(34,211,238,0.1)", borderRadius: "999px" }}>{tag}</span>
           ))}
         </div>
-        <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
-          <span style={{ fontFamily: "'Martian Mono',monospace", fontSize: "0.58rem", color: "rgba(6,182,212,0.45)", letterSpacing: "0.12em", fontWeight: 300 }}>03</span>
-          <div style={{ width: "36px", height: "1px", backgroundColor: "rgba(31,41,55,0.8)" }} />
-          <span style={{ fontFamily: "'Martian Mono',monospace", fontSize: "0.5rem", letterSpacing: "0.22em", color: "rgba(75,85,99,0.55)", textTransform: "uppercase", fontWeight: 300 }}>Services</span>
-        </div>
+        
       </div>
     </div>
   );

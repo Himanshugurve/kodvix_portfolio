@@ -158,7 +158,8 @@ export default function KodVixGlobal() {
       {/* Cards */}
       <div className="gl-card-row" style={{ position:"relative",zIndex:10,display:"flex",alignItems:"stretch",justifyContent:"space-between",gap:"clamp(0.75rem,2vw,1.5rem)",marginTop:"clamp(1.25rem,2.5vw,2rem)",flexWrap:"wrap" }}>
         <div className="gl-card-0" style={{ flex:1,minWidth:"240px",maxWidth:"360px",display:"flex" }}>
-          <LocationCard icon={<BuildingIcon />} name="KAAV (Partner)" label="US Operations" address={"Otawa, canada"} accentColor="#22d3ee"/>
+          <LocationCard icon={<BuildingIcon />} name="KAAV (Partner)" label="US Operations" address={"6452 Chaumont Crest
+Mississauga, ON L5N 2M8, Canada"} accentColor="#22d3ee"/>
         </div>
         <div style={{ display:"flex",flexDirection:"column",alignItems:"center",justifyContent:"center",gap:"8px",flexShrink:0,padding:"0 clamp(0.5rem,2vw,1.5rem)" }}>
           <div style={{ width:"1px",flex:1,background:"linear-gradient(180deg,transparent,rgba(34,211,238,0.3),transparent)" }} />
