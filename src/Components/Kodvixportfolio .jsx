@@ -167,7 +167,7 @@ export default function KodVixPortfolio() {
           /* Generous padding so header is never clipped by prev section */
           padding: 24rem 4rem 9rem;
         }
-        @media (max-width: 1023px) { .pf-root { padding: 5rem 2rem 2.5rem; } }
+        @media (max-width: 1023px) { .pf-root { padding: 17rem 2rem 2.5rem; } }
         @media (max-width: 599px)  { 
           .pf-root { 
             padding: 21rem 1rem 2rem; 
