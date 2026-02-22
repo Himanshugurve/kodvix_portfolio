@@ -526,7 +526,7 @@ Error generating stack: `+l.message+`
         /* ── MOBILE (≤640px) ── */
         @media (max-width: 640px) {
           .ts-root {
-            padding: 10.5rem 1rem 2rem;
+            padding: 6.5rem 1rem 2rem;
           }
           .ts-header { margin-bottom: 1.25rem; }
           /* Hide spec bars — saves horizontal space on mobile */
@@ -839,7 +839,7 @@ Manorama Ganj, Indore, MP 452001`,accentColor:"#38bdf8"})})]}),r.jsxs("div",{cla
           display: flex; flex-direction: column;
           box-sizing: border-box; overflow: hidden;
           /* Generous padding so header is never clipped by prev section */
-          padding: 6rem 4rem 9rem;
+          padding: 24rem 4rem 9rem;
         }
         @media (max-width: 1023px) { .pf-root { padding: 5rem 2rem 2.5rem; } }
         @media (max-width: 599px)  { 
