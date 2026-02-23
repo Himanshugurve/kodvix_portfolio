@@ -112,6 +112,7 @@ export default function KodVixPartner() {
           position: relative;
           z-index: 10;
           margin-bottom: clamp(2rem, 4vw, 3.5rem);
+          @media(max-width:599px){.partner-root{padding:8rem 1rem 3rem!important;}.partner-header{margin-top:8rem!important;}}
           display: flex;
           flex-direction: column;
           align-items: center;

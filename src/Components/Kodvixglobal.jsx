@@ -112,6 +112,7 @@ export default function KodVixGlobal() {
         .gl-stats{animation:fadeUp 0.8s cubic-bezier(0.16,1,0.3,1) 0.78s both;}
         .gl-footer{animation:fadeUp 0.8s cubic-bezier(0.16,1,0.3,1) 0.88s both;}
         @media(max-width:767px){.gl-map-pins{flex-direction:column!important;align-items:center!important;}.gl-card-row{flex-direction:column!important;align-items:center!important;}}
+        @media(max-width:599px){.gl-root{padding:8rem 1rem 3rem!important;}.gl-header{margin-top:8rem!important;}}
       `}</style>
 
       <div style={{ position:"absolute",top:"30%",left:"20%",width:"500px",height:"300px",borderRadius:"50%",background:"radial-gradient(ellipse,rgba(6,182,212,0.05) 0%,transparent 70%)",filter:"blur(60px)",pointerEvents:"none",zIndex:0 }} />

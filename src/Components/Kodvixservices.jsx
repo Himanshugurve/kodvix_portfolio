@@ -66,7 +66,7 @@ function BentoCard({ id, title, tagline, icon, features, accent, extra }) {
       onTouchEnd={() => setTimeout(() => setHov(false), 800)}
       style={{
         position: "relative", borderRadius: "16px",
-        padding: "clamp(1rem,2vw,1.6rem)",
+        padding: "clamp(0.9rem,2vw,1.6rem)",
         display: "flex", flexDirection: "column", overflow: "hidden",
         background: hov ? "rgba(12,22,44,0.82)" : "rgba(10,16,32,0.6)",
         backdropFilter: "blur(16px)", WebkitBackdropFilter: "blur(16px)",
@@ -79,29 +79,23 @@ function BentoCard({ id, title, tagline, icon, features, accent, extra }) {
         cursor: "default", width: "100%", height: "100%", boxSizing: "border-box",
       }}
     >
-      {/* Shimmer */}
       <div style={{ position: "absolute", top: 0, left: 0, right: 0, height: "1px", background: `linear-gradient(90deg,transparent,${accent}80,transparent)`, opacity: hov ? 1 : 0, transition: "opacity 0.4s" }} />
-      {/* Corner glow */}
       <div style={{ position: "absolute", top: "-60px", right: "-60px", width: "180px", height: "180px", borderRadius: "50%", background: `radial-gradient(circle,${accent}28 0%,transparent 70%)`, transform: hov ? "scale(1.4)" : "scale(1)", transition: "transform 0.6s", pointerEvents: "none" }} />
 
-      {/* Header row */}
-      <div style={{ display: "flex", alignItems: "flex-start", justifyContent: "space-between", gap: "10px", marginBottom: "0.8rem" }}>
+      <div style={{ display: "flex", alignItems: "flex-start", justifyContent: "space-between", gap: "10px", marginBottom: "0.7rem" }}>
         <div style={{ flex: 1, minWidth: 0 }}>
           <span style={{ fontFamily: "'Martian Mono',monospace", fontSize: "0.48rem", letterSpacing: "0.24em", color: accent, opacity: 0.55, display: "block", marginBottom: "4px", fontWeight: 400 }}>{id}</span>
           <h3 style={{ fontFamily: "'Barlow',sans-serif", fontWeight: 700, fontSize: "clamp(0.85rem,1.4vw,1.05rem)", lineHeight: 1.2, letterSpacing: "-0.01em", color: hov ? "#f0fdff" : "#dde6f0", margin: 0, marginBottom: "3px", transition: "color 0.3s" }}>{title}</h3>
           <span style={{ fontFamily: "'Barlow Condensed',sans-serif", fontWeight: 400, fontSize: "0.56rem", letterSpacing: "0.18em", color: "rgba(100,116,139,0.58)", textTransform: "uppercase" }}>{tagline}</span>
         </div>
-        {/* Icon */}
         <div style={{ width: "38px", height: "38px", flexShrink: 0, borderRadius: "10px", display: "flex", alignItems: "center", justifyContent: "center", backgroundColor: "rgba(8,47,73,0.5)", border: hov ? `1px solid ${accent}99` : "1px solid rgba(6,182,212,0.2)", color: accent, filter: hov ? `drop-shadow(0 0 8px ${accent}80)` : "none", transition: "all 0.35s", boxSizing: "border-box" }}>
           {icon}
         </div>
       </div>
 
-      {/* Divider */}
-      <div style={{ width: "100%", height: "1px", background: `linear-gradient(90deg,${accent}40,transparent)`, marginBottom: "0.8rem", opacity: hov ? 1 : 0.4, transition: "opacity 0.3s" }} />
+      <div style={{ width: "100%", height: "1px", background: `linear-gradient(90deg,${accent}40,transparent)`, marginBottom: "0.7rem", opacity: hov ? 1 : 0.4, transition: "opacity 0.3s" }} />
 
-      {/* Features */}
-      <div style={{ display: "flex", flexDirection: "column", gap: "0.7rem", flex: 1 }}>
+      <div style={{ display: "flex", flexDirection: "column", gap: "0.65rem", flex: 1 }}>
         {features.map((f, i) => (
           <div key={i} style={{ display: "flex", alignItems: "flex-start", gap: "9px" }}>
             <div style={{ width: "5px", height: "5px", borderRadius: "50%", backgroundColor: accent, boxShadow: `0 0 5px ${accent}`, flexShrink: 0, marginTop: "6px" }} />
@@ -113,9 +107,8 @@ function BentoCard({ id, title, tagline, icon, features, accent, extra }) {
         ))}
       </div>
 
-      {/* Status */}
       {extra === "status" && (
-        <div style={{ marginTop: "1rem", padding: "8px 12px", borderRadius: "8px", display: "flex", alignItems: "center", justifyContent: "space-between", backgroundColor: "rgba(8,47,73,0.3)", border: "1px solid rgba(6,182,212,0.12)" }}>
+        <div style={{ marginTop: "0.85rem", padding: "7px 11px", borderRadius: "8px", display: "flex", alignItems: "center", justifyContent: "space-between", backgroundColor: "rgba(8,47,73,0.3)", border: "1px solid rgba(6,182,212,0.12)" }}>
           <span style={{ fontFamily: "'Martian Mono',monospace", fontSize: "0.44rem", letterSpacing: "0.18em", color: "rgba(34,211,238,0.55)", textTransform: "uppercase", fontWeight: 400 }}>System_Status</span>
           <div style={{ display: "flex", alignItems: "center", gap: "5px" }}>
             <div style={{ width: "6px", height: "6px", borderRadius: "50%", backgroundColor: "#22d3ee", boxShadow: "0 0 6px #22d3ee", animation: "statusPulse 2s ease-in-out infinite" }} />
@@ -136,16 +129,12 @@ function MobileCarousel() {
   const pausedRef = useRef(false);
   const pauseTimerRef = useRef(null);
 
-  // card width + gap (in px) — computed once after mount
   const CARD_W = 280;
   const GAP = 14;
   const STEP = CARD_W + GAP;
   const TOTAL_CARDS = services.length;
-  // We render cards × 3 for seamless looping
   const COPIES = 3;
   const LOOP_WIDTH = TOTAL_CARDS * STEP;
-
-  // Speed: px per frame (~60fps) → about 40px/s
   const SPEED = 0.55;
 
   const startAnim = () => {
@@ -153,13 +142,8 @@ function MobileCarousel() {
     const tick = () => {
       if (!pausedRef.current) {
         posRef.current += SPEED;
-        // Reset when we've scrolled one full set
-        if (posRef.current >= LOOP_WIDTH) {
-          posRef.current -= LOOP_WIDTH;
-        }
-        if (trackRef.current) {
-          trackRef.current.style.transform = `translateX(-${posRef.current}px)`;
-        }
+        if (posRef.current >= LOOP_WIDTH) posRef.current -= LOOP_WIDTH;
+        if (trackRef.current) trackRef.current.style.transform = `translateX(-${posRef.current}px)`;
       }
       animRef.current = requestAnimationFrame(tick);
     };
@@ -167,100 +151,33 @@ function MobileCarousel() {
   };
 
   const stopAnim = () => {
-    if (animRef.current) {
-      cancelAnimationFrame(animRef.current);
-      animRef.current = null;
-    }
+    if (animRef.current) { cancelAnimationFrame(animRef.current); animRef.current = null; }
   };
 
-  useEffect(() => {
-    startAnim();
-    return () => stopAnim();
-  }, []);
+  useEffect(() => { startAnim(); return () => stopAnim(); }, []);
 
-  const handleMouseEnter = () => {
-    clearTimeout(pauseTimerRef.current);
-    pausedRef.current = true;
-  };
+  const handleMouseEnter = () => { clearTimeout(pauseTimerRef.current); pausedRef.current = true; };
+  const handleMouseLeave = () => { pauseTimerRef.current = setTimeout(() => { pausedRef.current = false; }, 400); };
+  const handleTouchStart = () => { clearTimeout(pauseTimerRef.current); pausedRef.current = true; };
+  const handleTouchEnd = () => { pauseTimerRef.current = setTimeout(() => { pausedRef.current = false; }, 2000); };
 
-  const handleMouseLeave = () => {
-    // Resume after a brief pause so it feels intentional
-    pauseTimerRef.current = setTimeout(() => {
-      pausedRef.current = false;
-    }, 400);
-  };
-
-  const handleTouchStart = () => {
-    clearTimeout(pauseTimerRef.current);
-    pausedRef.current = true;
-  };
-
-  const handleTouchEnd = () => {
-    pauseTimerRef.current = setTimeout(() => {
-      pausedRef.current = false;
-    }, 2000);
-  };
-
-  // Duplicate cards for seamless loop
   const allCards = [...services, ...services, ...services];
 
   return (
     <div
       style={{ overflow: "hidden", width: "100%", position: "relative" }}
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
-      onTouchStart={handleTouchStart}
-      onTouchEnd={handleTouchEnd}
+      onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}
+      onTouchStart={handleTouchStart} onTouchEnd={handleTouchEnd}
     >
-      {/* Fade edges */}
-      <div style={{ position: "absolute", left: 0, top: 0, bottom: 0, width: "32px", background: "linear-gradient(90deg,#050810,transparent)", zIndex: 10, pointerEvents: "none" }} />
-      <div style={{ position: "absolute", right: 0, top: 0, bottom: 0, width: "32px", background: "linear-gradient(270deg,#050810,transparent)", zIndex: 10, pointerEvents: "none" }} />
-
-      <div
-        ref={trackRef}
-        style={{
-          display: "flex",
-          gap: `${GAP}px`,
-          willChange: "transform",
-          // No CSS transition — JS drives it smoothly
-        }}
-      >
+      <div style={{ position: "absolute", left: 0, top: 0, bottom: 0, width: "28px", background: "linear-gradient(90deg,#050810,transparent)", zIndex: 10, pointerEvents: "none" }} />
+      <div style={{ position: "absolute", right: 0, top: 0, bottom: 0, width: "28px", background: "linear-gradient(270deg,#050810,transparent)", zIndex: 10, pointerEvents: "none" }} />
+      <div ref={trackRef} style={{ display: "flex", gap: `${GAP}px`, willChange: "transform" }}>
         {allCards.map((s, i) => (
-          <div
-            key={i}
-            style={{
-              width: `${CARD_W}px`,
-              flexShrink: 0,
-              // Give each card a proportional height based on content
-              minHeight: "260px",
-              display: "flex",
-            }}
-          >
+          <div key={i} style={{ width: `${CARD_W}px`, flexShrink: 0, minHeight: "240px", display: "flex" }}>
             <BentoCard {...s} />
           </div>
         ))}
       </div>
-    </div>
-  );
-}
-
-/* ── Dot Indicators for mobile ── */
-function DotIndicators({ activeIndex, total }) {
-  return (
-    <div style={{ display: "flex", justifyContent: "center", gap: "6px", marginTop: "1rem" }}>
-      {Array.from({ length: total }).map((_, i) => (
-        <div
-          key={i}
-          style={{
-            width: i === activeIndex ? "18px" : "6px",
-            height: "6px",
-            borderRadius: "3px",
-            backgroundColor: i === activeIndex ? "#22d3ee" : "rgba(34,211,238,0.2)",
-            boxShadow: i === activeIndex ? "0 0 6px rgba(34,211,238,0.6)" : "none",
-            transition: "all 0.4s ease",
-          }}
-        />
-      ))}
     </div>
   );
 }
@@ -295,10 +212,10 @@ export default function KodVixServices() {
           display: flex;
           flex-direction: column;
           overflow: hidden;
-          padding: 4.5rem 4rem 3rem;
+          padding: 4rem 4rem 3rem;
         }
 
-        .svc-header  { position:relative;z-index:10;margin-bottom:2.75rem; }
+        .svc-header { position: relative; z-index: 10; margin-bottom: 2.25rem; }
 
         .svc-hrow {
           display: flex;
@@ -333,7 +250,7 @@ export default function KodVixServices() {
         .svc-footer {
           position: relative;
           z-index: 10;
-          margin-top: 2.5rem;
+          margin-top: 2rem;
           display: flex;
           align-items: center;
           justify-content: space-between;
@@ -341,19 +258,8 @@ export default function KodVixServices() {
           gap: 0.75rem;
         }
 
-        .svc-tags {
-          display: flex;
-          align-items: center;
-          gap: 8px;
-          flex-wrap: wrap;
-        }
-
-        /* Mobile carousel wrapper */
-        .svc-carousel-wrap {
-          position: relative;
-          z-index: 10;
-          flex: 1;
-        }
+        .svc-tags { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+        .svc-carousel-wrap { position: relative; z-index: 10; flex: 1; }
 
         .svc-label { animation: fadeUp 0.8s cubic-bezier(0.16,1,0.3,1) 0.05s both; }
         .svc-h2    { animation: fadeUp 0.8s cubic-bezier(0.16,1,0.3,1) 0.18s both; }
@@ -365,37 +271,38 @@ export default function KodVixServices() {
         .svc-c3    { animation: fadeUp 0.75s cubic-bezier(0.16,1,0.3,1) 0.78s both; }
         .svc-ftx   { animation: fadeUp 0.75s cubic-bezier(0.16,1,0.3,1) 0.88s both; }
 
+        /* ── TABLET ── */
         @media (max-width: 1023px) {
-          .svc-root   { padding: 3.5rem 2rem 2.5rem; }
-          .svc-header { margin-bottom: 2rem; }
+          .svc-root   { padding: 3rem 2rem 2.5rem; }
+          .svc-header { margin-bottom: 1.75rem; }
           .svc-grid   { grid-template-columns: repeat(2, 1fr); }
-          .svc-footer { margin-top: 1.75rem; }
+          .svc-footer { margin-top: 1.5rem; }
         }
 
+        /* ── MOBILE ── */
         @media (max-width: 599px) {
           .svc-root {
-            padding: 1rem 0 1rem;
+            padding: 1.5rem 0 1.25rem;
             min-height: 100vh;
           }
-          .svc-header  { margin-bottom: 1rem; padding: 0 1rem; }
+          .svc-header {
+            margin-bottom: 1rem;
+            padding: 0 1rem;
+          }
           .svc-hrow {
             flex-direction: column;
             align-items: flex-start;
-            gap: 0.85rem;
+            gap: 0.75rem;
           }
           .svc-badge { align-self: flex-start; }
           .svc-footer {
-            margin-top: 1rem;
+            margin-top: 0.875rem;
             justify-content: center;
             padding: 0 1rem;
           }
           .svc-tags { display: none; }
           .bp-corner { width: 14px !important; height: 14px !important; }
           .svc-label { padding: 0 1rem; }
-        }
-
-        @media (max-width: 374px) {
-          .svc-root { padding: 2rem 0 1.5rem; }
         }
       `}</style>
 
@@ -404,7 +311,6 @@ export default function KodVixServices() {
       <div style={{ position: "absolute", bottom: "-10%", right: "10%", width: "420px", height: "420px", borderRadius: "50%", background: "radial-gradient(circle,rgba(30,58,138,0.08) 0%,transparent 70%)", filter: "blur(70px)", pointerEvents: "none", zIndex: 0 }} />
       <div style={{ position: "absolute", inset: 0, pointerEvents: "none", zIndex: 0, backgroundImage: "linear-gradient(rgba(34,211,238,0.025) 1px,transparent 1px),linear-gradient(90deg,rgba(34,211,238,0.025) 1px,transparent 1px)", backgroundSize: "55px 55px", animation: "gridFade 2s ease both" }} />
 
-      {/* Blueprint corners */}
       {[
         { top: "1.25rem", left: "1.25rem", borderTop: "1.5px solid rgba(6,182,212,0.35)", borderLeft: "1.5px solid rgba(6,182,212,0.35)" },
         { top: "1.25rem", right: "1.25rem", borderTop: "1.5px solid rgba(6,182,212,0.35)", borderRight: "1.5px solid rgba(6,182,212,0.35)" },
@@ -416,7 +322,7 @@ export default function KodVixServices() {
 
       {/* ── HEADER ── */}
       <div className="svc-header">
-        <div className="svc-label" style={{ display: "flex", alignItems: "center", gap: "12px", marginBottom: "0.9rem" }}>
+        <div className="svc-label" style={{ display: "flex", alignItems: "center", gap: "12px", marginBottom: "0.85rem" }}>
           <div style={{ width: "2rem", height: "2px", borderRadius: "2px", backgroundColor: "#22d3ee", boxShadow: "0 0 8px rgba(34,211,238,0.8)", animation: "lineExpand 0.7s ease 0.05s both" }} />
           <span style={{ fontFamily: "'Martian Mono',monospace", fontSize: "0.58rem", letterSpacing: "0.26em", color: "#22d3ee", textTransform: "uppercase", fontWeight: 400 }}>Services</span>
         </div>
@@ -433,7 +339,7 @@ export default function KodVixServices() {
                 letterSpacing: "-0.01em",
                 color: "#ffffff",
                 margin: 0,
-                marginBottom: "0.55rem",
+                marginBottom: "0.5rem",
                 textTransform: "uppercase",
               }}
             >
@@ -468,12 +374,11 @@ export default function KodVixServices() {
         </div>
       </div>
 
-      {/* ── CARDS: Mobile = Carousel, Desktop = Grid ── */}
+      {/* ── CARDS ── */}
       {isMobile ? (
         <div className="svc-carousel-wrap svc-c0">
           <MobileCarousel />
-          {/* Scroll hint text */}
-          <p style={{ textAlign: "center", fontFamily: "'Martian Mono',monospace", fontSize: "0.44rem", letterSpacing: "0.2em", color: "rgba(34,211,238,0.3)", marginTop: "0.9rem", textTransform: "uppercase" }}>
+          <p style={{ textAlign: "center", fontFamily: "'Martian Mono',monospace", fontSize: "0.44rem", letterSpacing: "0.2em", color: "rgba(34,211,238,0.3)", marginTop: "0.75rem", textTransform: "uppercase" }}>
             ← Auto-scrolling · Hover to pause →
           </p>
         </div>
@@ -494,7 +399,6 @@ export default function KodVixServices() {
             <span key={i} style={{ fontFamily: "'Barlow Condensed',sans-serif", fontWeight: 500, fontSize: "0.6rem", letterSpacing: "0.18em", color: "rgba(34,211,238,0.4)", textTransform: "uppercase", padding: "4px 12px", border: "1px solid rgba(34,211,238,0.1)", borderRadius: "999px" }}>{tag}</span>
           ))}
         </div>
-        
       </div>
     </div>
   );

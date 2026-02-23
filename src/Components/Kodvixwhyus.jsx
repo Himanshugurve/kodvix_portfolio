@@ -177,10 +177,11 @@ export default function KodVixWhyUs() {
         @media (max-width: 599px) {
           .why-root {
             /* Extra top padding = clears any fixed nav (e.g. 64px) + breathing room */
-            padding: 21rem 1rem 2rem;
+            padding: 8rem 1rem 3rem!important;
           }
-          .why-header { margin-bottom: 1.25rem; }
-          .why-hrow   { flex-direction: column; align-items: flex-start; gap: 0.75rem; }
+          .why-header {
+            margin-top: 8rem!important;
+          }
           .why-grid   { grid-template-columns: 1fr; gap: 0.85rem; }
           .why-tags   { display: none; }   /* hide decorative tags on mobile */
           .why-footer { justify-content: center; }
