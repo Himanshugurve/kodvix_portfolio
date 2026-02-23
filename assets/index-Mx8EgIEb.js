@@ -192,7 +192,7 @@ Error generating stack: `+l.message+`
           display: flex;
           flex-direction: row;
           width: 100%;
-          min-height: 100vh;
+          min-height: fit-content;
         }
 
         /* ── VISUAL PANEL ── */
@@ -228,8 +228,8 @@ Error generating stack: `+l.message+`
         @media (max-width: 767px) {
           .about-wrapper {
             flex-direction: column;
-            min-height: auto;
-            height: fit-content;
+            min-height: fit-content;
+            
           }
 
           .about-visual {
@@ -314,7 +314,7 @@ Error generating stack: `+l.message+`
         .svc-root {
           position: relative;
           width: 100%;
-          min-height: 100vh;
+          min-height: fit-content;
           background-color: #050810;
           display: flex;
           flex-direction: column;
@@ -390,7 +390,7 @@ Error generating stack: `+l.message+`
         @media (max-width: 599px) {
           .svc-root {
             padding: 1.5rem 0 1.25rem;
-            min-height: 100vh;
+            min-height: fit-content;
           }
           .svc-header {
             margin-bottom: 1rem;
@@ -535,7 +535,7 @@ Error generating stack: `+l.message+`
         .why-root {
           position: relative;        /* normal flow — no overlap with siblings */
           width: 100%;
-          min-height: 100vh;
+          min-height: fit-content;
           background-color: #050810;
           display: flex;
           flex-direction: column;
@@ -614,7 +614,8 @@ Error generating stack: `+l.message+`
         @media (max-width: 599px) {
           .why-root {
             /* Extra top padding = clears any fixed nav (e.g. 64px) + breathing room */
-            padding: 8rem 1rem 3rem!important;
+            padding: 1rem 1rem 3rem!important;
+            min-height: fit-content;
           }
           .why-header {
             margin-top: 8rem!important;
